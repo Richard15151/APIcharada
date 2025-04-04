@@ -12,8 +12,8 @@ app = Flask(__name__)
 CORS(app) ##Trabalha com políticas de segurança
 load_dotenv()
 
-FBKEY = json.loads(os.getenv('CONFIG_FIREBASE'))
-cred = credentials.Certificate(FBKEY)
+FB = json.loads(os.getenv('CONFIG_FIREBASE'))
+cred = credentials.Certificate(FB)
 
 firebase_admin.initialize_app(cred)
 
