@@ -70,7 +70,7 @@ def adicionar_charada():
         "pergunta": dados['pergunta'],
         "resposta": dados['resposta']
     })
-    return jsonify({'Mensagem':'Charada cadastrada com sucesso'})
+    return jsonify({'mensagem':'Charada cadastrada com sucesso'})
 #------ MÉTODO PUT - ALTERAR CHARADA -----
 @app.route('/charadas/<id>', methods=['PUT'])
 def alterar_charada(id):
