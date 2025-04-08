@@ -33,12 +33,10 @@ def teste():
 # --------MÉTODO GET - CHARADA ALEATÓRIA----------
 @app.route('/charadas', methods=['GET'])
 def charada():
-    print("Iniciando a busca por charadas...") # log para ver se a função foi chamada
     charadas = []
     lista = db.collection('charadas').stream()
     for item in lista:
         charadas.append(item.to_dict())
-        print(f"Charadas encontradas: {charadas}") # Log 2 - ver a lista de charada
     if charadas:
         return jsonify(random.choice(charadas)), 200
     else:
