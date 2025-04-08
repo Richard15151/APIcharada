@@ -13,7 +13,6 @@ CORS(app) ##Trabalha com políticas de segurança
 load_dotenv()
 
 FB = json.loads(os.getenv('CONFIG_FIREBASE'))
-print(FB)
 cred = credentials.Certificate(FB)
 
 firebase_admin.initialize_app(cred)
