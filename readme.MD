@@ -3,7 +3,7 @@
 
 **Descrição:**
 
-Esta API REST, desenvolvida com Flask e integrada ao Firebase Firestore, oferece uma solução completa para gerenciar um banco de dados de charadas. Ela fornece endpoints específicos para diversas operações, incluindo inserção, busca (aleatória e por ID), atualização e exclusão de charadas. A integração com o Firebase Firestore garante escalabilidade e confiabilidade para o armazenamento de dados.
+Esta API RESTFUL, desenvolvida com Flask e integrada ao Firebase Firestore, oferece uma solução completa para gerenciar um banco de dados de charadas. Ela fornece endpoints específicos para diversas operações, incluindo inserção, busca (aleatória e por ID), atualização e exclusão de charadas. A integração com o Firebase Firestore garante escalabilidade e confiabilidade para o armazenamento de dados.
 
 ## Índice
 
