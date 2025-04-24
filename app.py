@@ -9,7 +9,19 @@ from dotenv import load_dotenv
 
 app = Flask(__name__)
 
-CORS(app) ##Trabalha com políticas de segurança
+# --- Configuração CORS Explícita ---
+# Lista de origens permitidas.
+allowed_origins = [
+    "http://127.0.0.1:5500",                      # Desenvolvimento local
+    "http://localhost:5500",                       # Desenvolvimento local
+    "https://frontend-charadas-user.vercel.app",   # <<< ADICIONADO: Frontend do Usuário
+    "https://frontendcharada-adm.vercel.app"       # <<< ADICIONADO: Frontend ADM
+]
+
+# Aplica o CORS à aplicação, especificando as origens permitidas para todas as rotas
+# Isso garante que APENAS os frontends listados possam fazer requisições para esta API
+CORS(app, resources={r"/*": {"origins": allowed_origins}})
+# --- Fim da Configuração CORS ---
 load_dotenv()
 
 FB = json.loads(os.getenv('CONFIG_FIREBASE'))
@@ -116,5 +128,5 @@ def charada_lista():
     else:
         return jsonify({'mensagem':'ERRO, nenhuma charada encontrada'}), 404
     
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
